@@ -1,0 +1,89 @@
+.sidebar {
+    min-width: 250px;
+
+    background-color: $app-theme-card;
+    border-right: 1px solid #edebe9;
+    color: $font-primary-color;
+
+    @include undoSelection();
+}
+
+.sidebar__content {
+    margin-top: 70px;
+}
+
+.sidebar__list {
+    margin-top: 15px;
+}
+
+.sidebar_item {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    cursor: pointer;
+    padding-top: 13px;
+    padding-bottom: 7px;
+    padding-left: 15px;
+    padding-right: 15px;
+    align-items: center;
+
+    & .icon {
+        margin-right: 10px;
+
+        span {
+            color: $icons-color;
+            font-size: 18px;
+        }
+    }
+
+    & .categorie {
+        height: 20px;
+        font-size: 14px;
+        color: $font-primary-color;
+    }
+
+    & .count {
+        position: absolute;
+        right: 20px;
+        height: 20px;
+        font-size: 14px;
+        color: $font-primary-color;
+    }
+
+    &:hover {
+        background-color: $hover-card;
+    }
+}
+
+.sidebar_item.default {
+    .categorie {
+        font-weight: 500;
+        color: $font-primary-color !important;
+    }
+
+    .count {
+        color: $font-primary-color !important;
+    }
+
+    .material-icons {
+        color: $font-primary-color !important;
+    }
+}
+
+.sidebar_item.active {
+    background-color: $border-card;
+
+    .categorie {
+        color: $app-theme-color;
+        font-weight: 500;
+    }
+
+    .count {
+        color: $app-theme-color;
+        font-weight: 500;
+    }
+
+    .material-icons {
+        color: $app-theme-color;
+    }
+}

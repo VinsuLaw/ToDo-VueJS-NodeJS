@@ -1,0 +1,42 @@
+@mixin btn($type) {
+    padding: 0;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+
+    font-size: 14px;
+    padding: 8px 30px;
+
+    &:active {
+        transform: scale(0.98);
+    }
+
+    @if $type == 'primary' {
+        background-color: $app-theme-color;
+        color: white;
+
+        &:hover {
+            background-color: #215aba;
+        }
+    } @else if $type == 'danger' {
+        background-color: rgba(0, 0, 0, 0.2);
+        color: black;
+
+        &:hover {
+            background-color: #a19f9d;
+        }
+    } @else if $type == 'icon' {
+        padding: 0;
+        padding-left: 12px;
+        padding-right: 10px;
+    }
+}
+
+@mixin undoSelection() {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}

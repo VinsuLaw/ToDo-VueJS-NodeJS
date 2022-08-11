@@ -1,0 +1,169 @@
+header {
+    width: 100%;
+    height: 50px;
+
+    background-color: $app-theme-color;
+}
+
+.header__content {
+    height: 50px;
+    padding-left: 20px;
+    padding-right: 20px;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+    & .title {
+        color: white;
+        font-weight: 500;
+        text-decoration: none;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+
+    & .form-control {
+        position: relative;
+        background-color: white;
+        border-top-right-radius: 3px;
+        border-bottom-right-radius: 3px;
+
+        &:hover {
+            & label .label__content {
+                background-color: $bg-primary;
+            }
+
+            & #search {
+                background-color: $bg-primary;
+            }
+        }
+
+        & label {
+            position: absolute;
+            width: 35px;
+            height: 30px;
+            left: -35px;
+            background-color: white;
+            border-top-left-radius: 3px;
+            border-bottom-left-radius: 3px;
+            cursor: pointer;
+
+            @include undoSelection();
+
+            & .label__content {
+                height: 30px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                background-color: #54a7e94d;
+
+                border-top-left-radius: 3px;
+                border-bottom-left-radius: 3px;
+            }
+
+            & span {
+                color: $app-theme-color;
+                font-size: 22px;
+            }
+        }
+
+        & label.onHover {
+            & .label__content {
+                background-color: white !important;
+            }
+        }
+    }
+
+    & .form-control.onFocus {
+        & label .label__content {
+            background-color: $bg-primary;
+        }
+
+        & #search {
+            background-color: $bg-primary;
+        }
+    }
+
+    & #search {
+        width: 340px;
+        height: 30px;
+
+        background-color: $bg-secondery;
+        cursor: pointer;
+
+        outline: none;
+        border: none;
+        border-radius: 3px;
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+
+        padding-left: 10px;
+        padding-right: 40px;
+
+        font-size: 13px;
+
+        &:focus {
+            cursor: text;
+        }
+    }
+
+    & .reset {
+        position: absolute;
+        width: 30px;
+        height: 30px;
+
+        background-color: $bg-secondery;
+        border-top-right-radius: 3px;
+        border-bottom-right-radius: 3px;
+        right: 0;
+        top: 0;
+        cursor: pointer;
+
+        @include undoSelection();
+
+        &:active {
+            background-color: $bg-secondery !important;
+        }
+
+        &:hover {
+            background-color: white;
+        }
+
+        .reset__content {
+            height: 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border-top-right-radius: 3px;
+            border-bottom-right-radius: 3px;
+
+            span {
+                color: $app-theme-color;
+                font-size: 18px;
+                font-weight: 300;
+            }
+        }
+    }
+
+    .exit {
+        @include btn('icon');
+        height: 50px;
+        transition: all 0.2s ease;
+
+        &:hover {
+            background-color: #215aba;
+            transition: all 0.2s ease;
+        }
+
+        & span {
+            font-size: 20px;
+            color: white;
+            font-weight: 400;
+        }
+    }
+}

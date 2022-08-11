@@ -1,0 +1,141 @@
+.auth_form {
+    width: 440px;
+
+    background-color: white;
+
+    box-shadow: 0px 0px 10px grey;
+
+    padding: 20px 25px;
+    color: $font-primary-color;
+
+    & .form-controls {
+        margin-top: 30px;
+
+        .form-control {
+            display: flex;
+            flex-direction: column;
+
+            margin-bottom: 20px;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+
+            & label {
+                font-size: 16px;
+                padding-bottom: 5px;
+            }
+
+            & input {
+                padding: 5px 5px;
+                font-size: 16px;
+
+                background-color: white;
+                outline: 1px solid grey;
+                border: none;
+                border-radius: 3px;
+
+                &:focus {
+                    outline: 2px solid $app-theme-color;
+                }
+            }
+
+            & input:-webkit-autofill {
+                box-shadow: inset 0 0 0 1000px #fff;
+            }
+
+            & small {
+                margin-top: 5px;
+                color: red;
+            }
+        }
+
+        .form-control.invalid {
+            & input {
+                outline: 1px solid red;
+            }
+        }
+
+        .sent-code {
+            color: $steelBlue-color;
+            margin-bottom: 20px;
+        }
+
+        .recover_done {
+            background-color: lightgreen;
+            padding: 15px;
+            border-radius: 3px;
+            line-height: 1.2;
+        }
+    }
+
+    & .form-actions {
+        .btn {
+            margin-top: 30px;
+
+            @include btn('danger');
+
+            margin-right: 5px;
+
+            &:last-child {
+                margin-right: 0;
+            }
+        }
+
+        .btn.primary {
+            @include btn('primary');
+
+            &:disabled {
+                background-color: #cccccc;
+                color: #666666;
+
+                &:active {
+                    transform: none;
+                }
+            }
+        }
+
+        .forgot-password {
+            margin-top: 30px;
+
+            & span {
+                cursor: pointer;
+                font-size: 14px;
+                color: $steelBlue-color;
+
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+
+        .from-recovery {
+            margin-top: 30px;
+
+            .from-recovery_text {
+                display: flex;
+                flex-direction: row;
+                font-size: 14px;
+
+                & .blue {
+                    cursor: pointer;
+                    color: $steelBlue-color;
+
+                    &:hover {
+                        text-decoration: underline;
+                    }
+                }
+            }
+        }
+    }
+
+    & .warns {
+        margin-top: 25px;
+        display: flex;
+        flex-direction: column;
+
+        & small {
+            color: red;
+        }
+    }
+}
